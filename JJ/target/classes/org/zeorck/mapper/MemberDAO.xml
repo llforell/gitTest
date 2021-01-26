@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="org.zeorck.mapper.MemberDAO">
+  
+  <!-- 글쓰기를 하기위한 DAO(insert)-->
+  <insert id="memberinsert">
+  insert into ExamMember(id,pw,name,age,gender,phone,email,sname)
+  values(#{id},#{pw},#{name},#{age},#{gender},#{phone},#{email},#{sname});
+  </insert>
+  
+  <select id="list" resultType="org.zeorck.DTO.memberDTO">
+  <!--  select * from ExamMember;-->
+  select * 
+		 from (
+				select @rownum:=@rownum+1 as rownum,b.*
+				from (select @rownum:=0) as tmp, ExamMember as b
+				<if test='type =="i"'>
+				 where id like concat('%',#{keyword},'%')
+				 </if>
+				 <if test='type =="n"'>
+				 where name like concat('%',#{keyword},'%')
+				 </if>
+				  <if test='type =="in"'>
+				 where id like concat('%',#{keyword},'%') or name like concat('%',#{keyword},'%')
+				 </if>
+			    order by id
+			   ) as paginboard
+ <![CDATA[ where rownum>(#{pageNum}-1)*#{amount} and rownum<=#{pageNum}*#{amount}; ]]>
+  </select>
+  
+  <select id="memberdetail" resultType="org.zeorck.DTO.memberDTO">
+  select * from  ExamMember where id=#{id}
+  </select>
+  
+  <update id="memberupdate">
+  update ExamMember set pw=#{pw},name=#{name},email=#{email},phone=#{phone} where id=#{id}
+  </update>
+  
+  <delete id="memberdelete">
+  delete from ExamMember where id=#{id}
+  </delete>
+  
+    <select id="getTotal" resultType="int">
+  		select count(*) from ExamMember
+  </select>
+  
+  <select id="login" resultType="org.zeorck.DTO.memberDTO">
+  
+  		select * from ExamMember where id=#{id} and pw=#{pw}
+  
+  </select>
+  
+  </mapper>

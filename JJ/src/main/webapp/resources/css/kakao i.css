@@ -1,0 +1,514 @@
+@charset "utf-8";
+
+/* 상단 내비게이션 */
+
+div#topmenu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    background: black;
+    width: 100%;
+    height: 90px;
+    /* 0 : 좌우위치 값이 낮을수록 왼쪽으로 높을수록 오른쪽으로 */
+    /* 5px : 상하위치 값이 낮을수록 위쪽으로 높을수록 아래로 */
+    /* 10px : 흐림정도 : 값이 오를수록 흐름이 강해진다. */
+    /* rgba(R,G,B,Opacity); > Opacity(투명도 (0 ~ 1)) */
+    /* https://cssgenerator.org/box-shadow-css-generator.html */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+/* 로고제작 */
+
+div#logo {
+    width: 140px;
+}
+
+div#logo>a {
+    display: block;
+    width: 140px;
+    padding: 10px 0;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+
+/* 내비게이션 */
+
+div#gnb {
+    width: 720px;
+}
+
+div#gnb>ul {
+    display: flex;
+}
+
+div#gnb>ul>li>a {
+    display: block;
+    width: 180px;
+    padding: 10px 0;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    color: dimgray;
+}
+
+
+/* 마우스를 버튼에 위치했을때의 이벤트 반응 */
+
+div#gnb>ul>li>a:hover {
+    color: #000;
+}
+
+
+/* 사용자메뉴영역 */
+
+div#utill {
+    width: 80px;
+}
+
+div#utill>ul {
+    width: 80px;
+    display: flex;
+    justify-content: space-between;
+}
+
+div#utill>ul>li>a>span {
+    font-size: 28px;
+    color: white;
+}
+
+div#utill>ul>li>a>span:hover {
+    color: black;
+}
+
+
+/* 배너구성 */
+
+div#banner {
+    position: fixed;
+    right: 0;
+    top: 300px;
+    z-index: 9999;
+}
+
+div#banner>ul>li {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #000
+}
+
+div#banner>ul>li>a {
+    display: block;
+    width: 40px;
+    height: 40px;
+    background: white;
+    text-align: center;
+    line-height: 50px;
+}
+
+div#banner>ul>li>a>span {
+    font-size: 24px;
+    color: black;
+}
+
+div#fullpage {
+    width: 100%;
+    height: auto;
+}
+
+
+/* 메인영역 */
+
+div#Main {
+    width: 100%;
+    height: 1300px;
+    
+   background-image:url('https://t1.kakaocdn.net/friends/prod/brand/201801_type1_1920.jpg');
+   background-repeat: no-repeat;
+    box-shadow: 0 0 10px black;
+}
+
+div#intro {
+    position: relative;
+    width: 284px;
+    top: 300px;
+    left: 160px;
+}
+
+div#intro>span.text1 {
+    display: block;
+    font-size: 18px;
+    color: gray;
+    font-weight: bold;
+}
+
+div#intro>span.text2 {
+    display: block;
+    font-size: 40px;
+    color: #000;
+    font-weight: bold;
+}
+
+div#intro>span.text3 {
+    display: block;
+    font-size: 28px;
+    color: #000;
+    font-weight: 300;
+    letter-spacing: -2px;
+}
+
+#btn {
+    display: flex;
+    justify-content: space-between;
+}
+
+#btn>a.b1 {
+    display: block;
+    margin-top: 20px;
+    width: 110px;
+    padding: 7px 0;
+    border-radius: 10px;
+    border: 2px solid #000;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#btn>a.b2 {
+    display: block;
+    margin-top: 20px;
+    width: 110px;
+    padding: 7px 0;
+    border-radius: 10px;
+    border: 2px solid #000;
+    background: black;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+}
+
+
+/* 안쪽배너 */
+
+div#InnerBanner {
+    position: relative;
+    top: 500px;
+    margin: 0 auto;
+    width: 1600px;
+    height: 500px;
+    border-radius: 20px;
+    background: white;
+}
+
+div#InnerBanner>#inner {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0 auto;
+    width: 1200px;
+    display: flex;
+    justify-content: space-between;
+}
+
+div#InnerBanner>#inner>img {
+    display: block;
+    border: 1px solid #000;
+    width: 300px;
+    height: 300px;
+}
+
+div.ConsText {
+    width: 800px;
+}
+
+span.title {
+    display: block;
+    font-size: 30px;
+    color: dimgray;
+    font-weight: bold;
+}
+
+span.subTitle {
+    display: block;
+    font-size: 18px;
+    color: rgb(54, 54, 54);
+    line-height: 60px;
+}
+
+p.lt {
+    width: 640px;
+    color: dimgray;
+}
+
+p.st {
+    width: 640px;
+    color: dimgray;
+}
+
+div#btn2 {
+    position: relative;
+    top: 40px;
+    width: 340px;
+    display: flex;
+    justify-content: space-between;
+}
+
+div#btn2>a {
+    display: block;
+    width: 160px;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    color: dimgrey;
+    background: black;
+    color: #fff;
+}
+
+div#btn2>a:hover {
+    background: gray;
+}
+
+
+/* 서비스페이지 */
+
+div#Serivce {
+    width: 100%;
+    height: 1000px;
+    background: white;
+}
+
+div#serviceConts {
+    position: relative;
+    width: 520px;
+    top: 120px;
+    left: 160px;
+}
+
+span.title2 {
+    display: block;
+    font-size: 34px;
+    color: dimgrey;
+    font-weight: bold;
+}
+
+span.Subtitle2 {
+    display: block;
+    font-size: 16px;
+    color: dimgrey;
+    font-weight: bold;
+    line-height: 50px;
+}
+
+p.serviceText {
+    font-size: 14px;
+    color: rgb(138, 138, 138);
+    width: 520px;
+    line-height: 20px;
+}
+
+div#wd {
+    position: relative;
+    top: 220px;
+    display: flex;
+    justify-content: space-between;
+    width: 1580px;
+    margin: 0 auto;
+}
+
+div.wdc {
+    position: relative;
+    width: 28%;
+    height: 500px;
+    background: dimgray;
+}
+
+div.wdc3 {
+    position: relative;
+    width: 28%;
+    height: 500px;
+    background: black;
+}
+div.wdc>div.num {
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 60px;
+    background: white;
+    font-size: 16px;
+    color: #000;
+    border-radius: 50%;
+    font-weight: bold;
+    text-align: center;
+    line-height: 60px;
+}
+
+span.webTitle {
+    position: absolute;
+    top: 160px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: block;
+    font-size: 24px;
+    color: rgb(201, 201, 201);
+    font-weight: 600;
+    line-height: 50px;
+}
+
+p.wdText {
+    position: absolute;
+    top: 230px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+}
+
+div#wdbtn {
+    position: absolute;
+    top: 360px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: block;
+    margin-top: 20px;
+    width: 130px;
+    padding: 8px 0;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    color: dimgrey;
+    background: white;
+}
+
+
+/* ContanctMe */
+
+div#ContanctMe {
+    background: black;
+    height: 400px;
+}
+
+div#ym {
+    position: relative;
+    top: 140px;
+    width: 540px;
+    margin: 0 auto;
+}
+
+span.Title3 {
+    display: block;
+    font-size: 30px;
+    color: #fff;
+    line-height: 50px;
+    width: 540px;
+    text-align: center;
+}
+
+span.Title3>span.underLine {
+    width: 400px;
+    height: 2px;
+    margin: 0 auto;
+    display: block;
+    background: white;
+}
+
+div#btn3 {
+    position: relative;
+    top: 40px;
+    width: 160px;
+    margin: 0 auto;
+}
+
+div#btn3>a {
+    display: block;
+    width: 160px;
+    padding: 10px 0;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    color: dimgrey;
+    background: white;
+}
+
+
+/* 풋터영역 */
+
+div#footer {
+    height: 380px;
+}
+
+div#gti {
+    position: relative;
+    top: 60px;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+span.Title4 {
+    display: block;
+    font-size: 26px;
+    color: #000;
+    font-weight: 600;
+    text-align: center;
+}
+
+p.gtiText {
+    color: dimgray;
+    text-align: center;
+    line-height: 30px;
+}
+
+ul#footerIcon {
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+
+ul#footerIcon>li {
+    width: 40px;
+    height: 40px;
+    background: ghostwhite;
+    border-radius: 50%;
+}
+
+ul#footerIcon>li>a {
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: gray;
+    text-align: center;
+}
+
+ul#footerIcon>li>a>span {
+    font-size: 16px;
+    line-height: 40px;
+    color: #fff;
+}
+
+ul#footerIcon>li>a:hover {
+    background: #000;
+}
+
+span.copyRight {
+    position: relative;
+    top: 130px;
+    display: block;
+    text-align: center;
+}

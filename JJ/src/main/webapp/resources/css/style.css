@@ -1,0 +1,375 @@
+@charset "UTF-8";
+:root{
+	-body-background-color: #f5f6f7;
+	-font-color: #4e4e4e;
+	-border-gray-color : #dadada;
+	-naver-green-color: #04c75a;
+	-naver-green-border-color: #06b350;
+}
+
+
+*{
+	margin:0;
+	padding:0;
+}
+
+body{
+	background:var(-body-background-color);
+}
+
+.main-container{
+	width:100%;
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+	margin-top: 21px;
+}
+.main-container .main-wrap{
+	width:768px;
+
+}
+.main-container .main-wrap .sel-lang-wrap .lang-select
+{
+	width: 96px;
+	height: 30px;
+	color: var(-font-color);
+	border: solid 1px var(-border-gray-color);
+}
+.main-container .main-wrap .logo-wrap{
+	padding-top:55px;
+}
+.main-container .main-wrap .logo-wrap img
+{
+	width: 231px;
+	height: 44px;
+}
+
+.main-container .main-wrap header .sel-lang-wrap{
+	display:flex;
+	justify-content:flex-end;
+}
+
+.main-container .main-wrap header .logo-wrap{
+	display:flex;	
+	flex-direction: column;
+	align-items: center;
+}
+.login-input-section-wrap{
+	padding-top: 60px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.login-input-wrap{
+	width: 465px;
+	height :48px;
+	border: solid 1px var(	-border-gray-color );
+	background: white;
+}
+.password-wrap{
+	margin-top: 13px;
+}
+.login-input-wrap input{
+	border: none;
+	width:430px;
+	margin-top: 10px;
+	font-size: 14px;
+	margin-left: 10px;
+	height:30px;
+}
+.login-button-wrap {
+	padding-top: 13px;
+}
+.login-button-wrap button{
+	width: 465px;
+	height :48px;
+	font-size: 18px;
+	background: var(-naver-green-color);
+	color: white;
+	border: solid 1px var(-naver-green-border-color);
+}
+.login-stay-sign-in{
+	width: 465px;
+	height: 52px;
+	
+	display: flex;
+	font-size: 15px;
+	color: #4e4e4e;
+	align-items: center;
+	justify-content: flex-start;
+	border-bottom: solid 1px var(-border-gray-color);
+}
+.login-stay-sign-in i{
+	font-size: 25px;
+	color: #9ba1a3;
+}
+.login-stay-sign-in span{
+	padding-left: 5px;
+	line-height: 25px;
+}
+
+.Easy-sgin-in-wrap{
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-top: 40px;
+
+}
+.Easy-sgin-in-wrap h2{
+	font-size: 20px;
+}
+.Easy-sgin-in-wrap .sign-button-list
+{
+	padding-top:25px;
+	list-style: none;
+	width: 465px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.Easy-sgin-in-wrap .sign-button-list li{
+	padding-bottom: 10px;
+}
+.Easy-sgin-in-wrap .sign-button-list li button{
+	width: 465px;
+	height: 56px;
+	border: solid 1px var(-border-gray-color);
+	text-align: left;
+	background: white;
+}
+.Easy-sgin-in-wrap .sign-button-list li button i{
+	padding-left: 15px;
+	font-size: 20px;
+}
+.fa-qrcode
+{
+	color:var(-naver-green-color);
+}
+.fa-line{
+	color:var(-naver-green-color);
+}
+.fa-facebook-square
+{
+	color:#4064ac;
+}
+.Easy-sgin-in-wrap .sign-button-list li button span{
+	padding-left: 20px;
+	font-size: 18px;
+}
+.Easy-sgin-in-wrap .forget-msg{
+	color:var(-font-color);
+	font-size: 14px;
+	padding-top: 10px;
+
+}
+footer{
+   
+	padding-top: 95px;
+	padding-bottom: 15px;
+
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+	width:768px;
+
+
+
+}
+.copyright-wrap{
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: 15px;
+
+
+}
+footer .copyright-wrap span img{
+	width: 59px;
+	
+	height: 11px;
+}
+footer .copyright-wrap span{
+	font-size: 13px;
+	line-height: 15px;
+}
+.thumbs {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+.thumbs li {
+	list-style: none;
+	float: left;
+	margin: 0 12px 12px 0;
+	padding: 0;
+}
+.thumbs.style1 li {
+	width: 46%;
+}
+.thumbs.style1 img {
+	width: 100%;
+}
+.thumbs li a {
+}
+.thumbs li img {
+	display: block;
+}
+.thumbs li a img {
+	border: none;
+}
+#cycle {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	padding: 0;
+}
+#cycle li {
+	position: relative;
+	list-style: none;
+	margin: 0;
+	padding: 3px;
+	width: 100%;
+	overflow: hidden;
+}
+#cycle li img {
+	width: 100%;
+}
+#cycle li div {
+	position: absolute;
+	bottom: 3px;
+	left: 3px;
+	padding: 3px;
+	width: 494px;
+	background: black;
+	color: white;
+	font-size: 12px;
+	opacity: .8;
+}
+/*
+    ColorBox Core Style
+    The following rules are the styles that are consistant between themes.
+    Avoid changing this area to maintain compatability with future versions of ColorBox.
+*/
+#colorbox, #cboxOverlay, #cboxWrapper {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 9999;
+	overflow: hidden;
+}
+#cboxOverlay {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+}
+#cboxMiddleLeft, #cboxBottomLeft {
+	clear: left;
+}
+#cboxContent {
+	position: relative;
+}
+#cboxLoadedContent {
+	overflow: auto;
+}
+#cboxLoadedContent iframe {
+	display: block;
+	width: 100%;
+	height: 100%;
+	border: 0;
+}
+#cboxTitle {
+	margin: 0;
+}
+#cboxLoadingOverlay, #cboxLoadingGraphic {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+#cboxPrevious, #cboxNext, #cboxClose, #cboxSlideshow {
+	cursor: pointer;
+}
+/* 
+    ColorBox example user style
+    The following rules are ordered and tabbed in a way that represents the
+    order/nesting of the generated HTML, so that the structure easier to understand.
+*/
+#cboxOverlay {
+	background: #000;
+}
+#colorbox {
+}
+#cboxContent {
+	margin-top: 20px;
+}
+#cboxLoadedContent {
+	background: #000;
+	padding: 5px;
+}
+#cboxTitle {
+	position: absolute;
+	top: -20px;
+	left: 0;
+	color: #ccc;
+}
+#cboxCurrent {
+	position: absolute;
+	top: -20px;
+	right: 0px;
+	color: #ccc;
+}
+#cboxSlideshow {
+	position: absolute;
+	top: -20px;
+	right: 90px;
+	color: #fff;
+}
+#cboxPrevious {
+	position: absolute;
+	top: 50%;
+	left: 5px;
+	margin-top: -32px;
+	background: url(images/controls.png) top left no-repeat;
+	width: 28px;
+	height: 65px;
+	text-indent: -9999px;
+}
+#cboxPrevious.hover {
+	background-position: bottom left;
+}
+#cboxNext {
+	position: absolute;
+	top: 50%;
+	right: 5px;
+	margin-top: -32px;
+	background: url(images/controls.png) top right no-repeat;
+	width: 28px;
+	height: 65px;
+	text-indent: -9999px;
+}
+#cboxNext.hover {
+	background-position: bottom right;
+}
+#cboxLoadingOverlay {
+	background: #000;
+}
+#cboxLoadingGraphic {
+	background: url(images/loading.gif) center center no-repeat;
+}
+#cboxClose {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	display: block;
+	background: url(images/controls.png) top center no-repeat;
+	width: 38px;
+	height: 19px;
+	text-indent: -9999px;
+}
+#cboxClose.hover {
+	background-position: bottom center;
+}

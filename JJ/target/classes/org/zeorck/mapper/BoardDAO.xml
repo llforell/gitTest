@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="org.zeorck.mapper.BoardDAO">
+  
+  <!-- 글쓰기를 하기위한 DAO(insert)-->
+  <insert id="bbb">
+  		<selectKey keyProperty="bno" order="BEFORE" resultType="int">
+			select max(bno)+1 bno from tbl_board
+		</selectKey>
+  insert into tbl_board(title,content,writer)
+  values(#{title},#{content},#{writer});
+  </insert>
+  
+  <select id="list" resultType="org.zeorck.DTO.boardDTO">
+ <!--  select * from tbl_board; -->
+		 select * 
+		 from (
+				select @rownum:=@rownum+1 as rownum,b.*
+				from (select @rownum:=0) as tmp, tbl_board as b
+				<if test='type =="t"'>
+				 where title like concat('%',#{keyword},'%')
+				 </if>
+				 <if test='type =="c"'>
+				 where content like concat('%',#{keyword},'%')
+				 </if>
+				 <if test='type =="w"'>
+				 where writer like concat('%',#{keyword},'%')
+				 </if>
+				  <if test='type =="tc"'>
+				 where title like concat('%',#{keyword},'%') or content like concat('%',#{keyword},'%')
+				 </if>
+			    order by bno desc
+			   ) as paginboard
+ <![CDATA[ where rownum>(#{pageNum}-1)*#{amount} and rownum<=#{pageNum}*#{amount}; ]]>
+		
+  </select>
+  
+  <select id="detail" resultType="org.zeorck.DTO.boardDTO">
+  select * from  tbl_board where bno=#{bno}
+  </select>
+  
+  <update id="update">
+  update tbl_board set title=#{title},content=#{content} where bno=#{bno}
+
+  </update>
+  
+  <delete id="delete">
+  delete from tbl_board where bno=#{bno}
+  </delete>
+  
+  <select id="getTotal" resultType="int">
+  		select count(*) from tbl_board
+  </select>
+  
+  </mapper>
